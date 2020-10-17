@@ -68,6 +68,6 @@ async def time_check():
 			return
 
 bot.loop.create_task(time_check())
-bot.run("NzY0NTg0OTY5OTk2ODYxNDgx.X4IZPg.mAXqeiva05HBIuok7ldWpi_S5zk")
+bot.run(bot.login(process.env.BOT_TOKEN))
 
 input("Press enter to exit")
