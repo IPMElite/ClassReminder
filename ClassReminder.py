@@ -68,4 +68,4 @@ async def time_check():
 			return
 
 bot.loop.create_task(time_check())
-bot.run("NzY0NTg0OTY5OTk2ODYxNDgx.X4IZPg.4-TXQxKTS3__FviLigb-TJa6n2k")
+bot.run(client.login(process.env.BOT_TOKEN))
