@@ -4,8 +4,10 @@ from time import gmtime, strftime
 from datetime import date
 import time
 import asyncio
+import os
 
 num = 60
+token = os.environ.get('BOT_TOKEN')
 # GETS THE CLIENT OBJECT FROM DISCORD.PY. CLIENT IS SYNONYMOUS WITH BOT.
 bot = discord.Client()
 
