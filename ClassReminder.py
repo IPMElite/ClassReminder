@@ -63,6 +63,12 @@ async def time_check():
 		elif d == "Sat" or d == "Sun":
 			print("Weekend")
 			await asyncio.sleep(1800)
+async def on_message(message):
+	if message.content == "!schedule":
+		await message.channel.send("Daily Schedule:\nPeriod 1      |     8:35 - 9:16\nPeriod 2     |     9:31 - 10:08\nPeriod 3     |     10:23 - 11:00\nPeriod 4     |     11:15 - 11:52\nPeriod 5     |     12:07 - 12:44\nPeriod 6     |     12:59 - 1:36\nPeriod 7     |     1:51 - 2:28\nPeriod 8     |     2:43 - 3:20")
+	if message.content == "!club":
+		await message.channel.send("Clubs:\nMonday            |     Computer Science Club (3:45 - 4:30)\nWednesday     |     FBLA (7:55 - 8:20)\nThursday          |     History Bee/Bowl (3:30 - 4:30)")
 
 bot.loop.create_task(time_check())
+bot.loop.create_task(on_message(message))
 bot.run(token)
