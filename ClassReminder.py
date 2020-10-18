@@ -51,23 +51,17 @@ async def time_check():
 				await channel.send("Period 8 is starting is a minute.")
 			if d == "Mon" and current_time >= "15:43:30" and current_time <= "15:44:30":
 				await channel.send("Computer Science Club is starting in a minute.")
-			if d == "Mon" and current_time >= "16:30:00" and current_time <= "16:35:00":
+			if d == "Mon" and current_time >= "16:30:00" and current_time <= "16:31:00":
 				await channel.send("School is over.")
-				return
 			if d == "Thu" and current_time >= "15:28:30" and current_time <= "15:29:30":
 				await channel.send("History Bee/Bowl is starting in a minute.")
 			if d == "Thu" and current_time > "16:30:00" and current_time < "16:40:00":
 				await channel.send("School is over.")
-				return
-			if (d == "Tue" or d == "Wed" or d == "Fri") and current_time >= "15:20:00" and current_time <= "15:40:00":
+			if (d == "Tue" or d == "Wed" or d == "Fri") and current_time >= "15:20:00" and current_time <= "15:21:00":
 				await channel.send("School is over.")
-				return
 			await asyncio.sleep(60)
-			
 		elif d == "Sat" or d == "Sun":
 			print("Weekend")
-			await channel.send("There is no school today")
-			return
 
 bot.loop.create_task(time_check())
 bot.run(token)
