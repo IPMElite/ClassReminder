@@ -62,7 +62,7 @@ async def time_check():
 			await asyncio.sleep(60)
 		elif d == "Sat" or d == "Sun":
 			print("Weekend")
-			await asyncio.sleep("32:35:00"-t)
+			await asyncio.sleep(1800)
 
 bot.loop.create_task(time_check())
 bot.run(token)
