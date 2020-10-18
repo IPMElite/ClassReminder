@@ -70,4 +70,4 @@ async def time_check():
 			return
 
 bot.loop.create_task(time_check())
-bot.run(BOT_TOKEN)
+bot.run(token)
