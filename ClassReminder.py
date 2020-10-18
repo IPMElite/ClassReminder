@@ -27,11 +27,11 @@ async def time_check():
 		current_time = time.strftime("%H:%M:%S", t)
 		print(current_time)
 		today = date.today()
-		# print(today)
+		print(today)
 		d = today.strftime("%a")
 		# print(d)
 		channel = bot.get_channel(764596098437349401)
-		if d == "Mon" or d == "Tue" or d == "Wed" or d == "Thu" or d == "Fri":
+		if (d == "Mon" or d == "Tue" or d == "Wed" or d == "Thu" or d == "Fri") and (today != 2020-11-3 or today != 2020-11-26 or today != 2020-11-27 or today != 2020-12-17 or today != 2020-12-18 or today != 2020-12-21 or today != 2020-12-22 or today != 2020-12-23 or today != 2020-12-24):
 			if d == "Wed" and current_time >= "7:55:00" and current_time <= "8:20:00":
 				await channel.send( "FBLA is starting in a minute.")
 			if current_time >= "8:33:30" and current_time <= "8:34:30":
