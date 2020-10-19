@@ -77,6 +77,13 @@ async def time_check():
 		elif d == "Sat" or d == "Sun":
 			print("Weekend")
 			await asyncio.sleep(1800)
+async def on_reaction_add(reaction, user):
+	ChID = '767857071944892426'
+	if reaction.message.channel.id != ChID:
+		return
+	if reaction.emoji == ":hourglass:":
+		Subscribed = discord.utils.get(user.server.roles, name="Subscribed")
+	await client.add_roles(user, Subscribed)
 #async def on_ready():
 #	channel = bot.get_channel(767857071944892426)
 #	role = discord.utils.get(
