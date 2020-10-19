@@ -20,7 +20,8 @@ bot = discord.Client()
 #msg = "This is an automatic message per launch and will be deleted after a few seconds."
 async def on_ready():
 	try:
-		await bot.send_message(discord.utils.get(guild.channels, name = "reminders"), "This is an automatic message per launch and will be deleted after a few seconds.")
+		channel = bot.get_channel(discord.utils.get(guild.channels, name = "reminders")
+		await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
 	except:
 		print("Creating new channel")
 		#server = ctx.message.server
