@@ -6,6 +6,7 @@ import time
 import asyncio
 import os
 from discord.ext import tasks
+from discord.utils import get
 
 num = 60
 token = os.environ.get('BOT_TOKEN')
@@ -16,6 +17,15 @@ bot = discord.Client()
 @bot.event
 # EVENT LISTENER FOR WHEN A NEW MESSAGE IS SENT TO A CHANNEL.
 @bot.event
+startMsg = "This is an automatic message per launch and will be deleted after a few seconds."
+try:
+	await bot.send_message(discord.utils.get(server.channels, name = "reminders"), message)
+except:
+	print("Creating new channel")
+	await bot.create_channel(server, "reminder", type discord.ChannelType.text)
+	message = await bot.send_message(discord.utils.get(server.channels, name = "reminders"), message)
+	await asyncio.sleep(5)
+	await bot.delete_message(message)
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
@@ -30,7 +40,8 @@ async def time_check():
 		print(today)
 		d = today.strftime("%a")
 		# print(d)
-		channel = bot.get_channel(764596098437349401)
+		#channel = bot.get_channel(764596098437349401)
+		channel = bot.get_channel(discord.utils.get(server.channels, name = "reminders"))
 		if (d == "Mon" or d == "Tue" or d == "Wed" or d == "Thu" or d == "Fri") and (today != 2020-11-3 or today != 2020-11-26 or today != 2020-11-27 or today != 2020-12-17 or today != 2020-12-18 or today != 2020-12-21 or today != 2020-12-22 or today != 2020-12-23 or today != 2020-12-24):
 			if d == "Wed" and current_time >= "7:55:00" and current_time <= "8:20:00":
 				await channel.send( "FBLA is starting in a minute.")
