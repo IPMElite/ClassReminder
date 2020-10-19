@@ -39,6 +39,7 @@ async def on_message(message):
 		user = bot.get_user(user_id)
 		await bot.add_roles(user, role)
 		print("Role given")
+@tasks.loop(minutes = 1)
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
@@ -84,10 +85,10 @@ async def time_check():
 				await channel.send("School is over.")
 			if (d == "Tue" or d == "Wed" or d == "Fri") and current_time >= "15:20:00" and current_time <= "15:21:00":
 				await channel.send("School is over.")
-			await asyncio.sleep(60)
+			#await asyncio.sleep(60)
 		elif d == "Sat" or d == "Sun":
 			print("Weekend")
-			await asyncio.sleep(1800)
+			#await asyncio.sleep(1800)
 #async def on_reaction_add(reaction, user):
 #	ChID = '767857071944892426'
 #	if reaction.message.channel.id != ChID:
