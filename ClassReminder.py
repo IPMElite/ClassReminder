@@ -30,15 +30,12 @@ bot = discord.Client()
 #		await asyncio.sleep(4)
 async def on_ready():
 	channel = bot.get_channel(767857071944892426)
-	message = await channel.send("React to this message to subscribe to reminders")
-	await message.add_reaction(emoji='🔔')
-async def on_reaction_add(reaction, user):
-	ChID = '767857071944892426'
-	if reaction.message.channel.id != ChID:
-		return
-	if reaction.emoji == "🔔":
-		role = discord.utils.get(server.roles, id = 767857989460819980)
-		await bot.add_roles(user, role)
+	message = await channel.send("Use the command '!subscribe' to subscribe to reminders")
+async def on_message(message):
+	role = discord.utils.get(server.roles, id = 767857989460819980)
+	if message.content == '!schedule':
+		await bot.add_roles(role)
+	await bot.process_commands(message)
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
