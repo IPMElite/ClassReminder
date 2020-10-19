@@ -31,11 +31,7 @@ bot = discord.Client()
 async def on_ready():
 	channel = bot.get_channel(767857071944892426)
 	message = await channel.send("Use the command '!subscribe' to subscribe to reminders")
-async def on_message(message):
-	role = discord.utils.get(server.roles, id = 767857989460819980)
-	if message.content == '!schedule':
-		await bot.add_roles(role)
-	await bot.process_commands(message)
+@tasks.loop(seconds = 60)
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
@@ -81,10 +77,15 @@ async def time_check():
 				await channel.send("School is over.")
 			if (d == "Tue" or d == "Wed" or d == "Fri") and current_time >= "15:20:00" and current_time <= "15:21:00":
 				await channel.send("School is over.")
-			await asyncio.sleep(60)
+			#await asyncio.sleep(60)
 		elif d == "Sat" or d == "Sun":
 			print("Weekend")
-			await asyncio.sleep(1800)
+			#await asyncio.sleep(1800)
+async def on_message(message):
+	role = discord.utils.get(server.roles, id = 767857989460819980)
+	if message.content == '!schedule':
+		await bot.add_roles(role)
+    	time_check.start()
 #async def on_reaction_add(reaction, user):
 #	ChID = '767857071944892426'
 #	if reaction.message.channel.id != ChID:
