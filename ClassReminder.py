@@ -6,16 +6,12 @@ import time
 import asyncio
 import os
 from discord.ext import tasks
-#from discord.utils import get
+from discord.utils import get
 
 num = 60
 token = os.environ.get('BOT_TOKEN')
-# GETS THE CLIENT OBJECT FROM DISCORD.PY. CLIENT IS SYNONYMOUS WITH BOT.
 bot = discord.Client()
 
-# EVENT LISTENER FOR WHEN THE BOT HAS SWITCHED FROM OFFLINE TO ONLINE.
-@bot.event
-# EVENT LISTENER FOR WHEN A NEW MESSAGE IS SENT TO A CHANNEL.
 @bot.event
 #msg = "This is an automatic message per launch and will be deleted after a few seconds."
 #async def on_ready():
@@ -31,6 +27,11 @@ bot = discord.Client()
 #		await asyncio.sleep(5)
 #		await bot.delete_message(message)
 #		await asyncio.sleep(4)
+async def on_ready():
+	channel = bot.get_channel(767857071944892426)
+	role = discord.utils.get(
+	message = await channel.send("Please react to this message if you wish to subscribe to reminders for each period.")
+@bot.event
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
@@ -45,7 +46,7 @@ async def time_check():
 		print(today)
 		d = today.strftime("%a")
 		# print(d)
-		channel = bot.get_channel(764596098437349401)
+		channel = bot.get_channel(767855423775572018)
 		#channel = bot.get_channel(discord.utils.get(server.channels, name = "reminders"))
 		if (d == "Mon" or d == "Tue" or d == "Wed" or d == "Thu" or d == "Fri") and (today != 2020-11-3 or today != 2020-11-26 or today != 2020-11-27 or today != 2020-12-17 or today != 2020-12-18 or today != 2020-12-21 or today != 2020-12-22 or today != 2020-12-23 or today != 2020-12-24):
 			if d == "Wed" and current_time >= "07:53:30" and current_time <= "07:54:30":
