@@ -17,13 +17,13 @@ bot = discord.Client()
 @bot.event
 # EVENT LISTENER FOR WHEN A NEW MESSAGE IS SENT TO A CHANNEL.
 @bot.event
-msg = "This is an automatic message per launch and will be deleted after a few seconds."
+#msg = "This is an automatic message per launch and will be deleted after a few seconds."
 try:
-	await bot.send_message(discord.utils.get(server.channels, name = "reminders"), msg)
+	await bot.send_message(discord.utils.get(server.channels, name = "reminders"), "This is an automatic message per launch and will be deleted after a few seconds.")
 except:
 	print("Creating new channel")
 	await bot.create_channel(server, "reminder", type discord.ChannelType.text)
-	message = await bot.send_message(discord.utils.get(server.channels, name = "reminders"), msg)
+	message = await bot.send_message(discord.utils.get(server.channels, name = "reminders"), "This is an automatic message per launch and will be deleted after a few seconds.")
 	await asyncio.sleep(5)
 	await bot.delete_message(message)
 async def time_check():
