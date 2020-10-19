@@ -37,8 +37,8 @@ async def on_reaction_add(reaction, user):
 	if reaction.message.channel.id != ChID:
 		return
 	if reaction.emoji == "🔔":
-		subscribed = discord.utils.get(user.server.roles, name="Subscribed")
-	await client.add_roles(user, subscribed)
+		role = discord.utils.get(user.server.roles, name="Subscribed")
+	await bot.add_roles(user, role)
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
