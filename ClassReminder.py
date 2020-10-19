@@ -1,4 +1,4 @@
-eeimport discord
+import discord
 import datetime
 from time import gmtime, strftime
 from datetime import date
