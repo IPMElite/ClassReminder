@@ -18,19 +18,19 @@ bot = discord.Client()
 # EVENT LISTENER FOR WHEN A NEW MESSAGE IS SENT TO A CHANNEL.
 @bot.event
 #msg = "This is an automatic message per launch and will be deleted after a few seconds."
-async def on_ready():
-	try:
-		channel = bot.get_channel(discord.utils.get(guild.channels, name = "reminders")
-		await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
-	except:
-		print("Creating new channel")
+#async def on_ready():
+#	try:
+#		channel = bot.get_channel(discord.utils.get(guild.channels, name = "reminders")
+#		await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
+#	except:
+#		print("Creating new channel")
 		#server = ctx.message.server
 		#await bot.create_channel(server, "reminder", type=discord.ChannelType.text)
-		channel = await guild.create_text_channel('reminders')
-		message = await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
-		await asyncio.sleep(5)
-		await bot.delete_message(message)
-		await asyncio.sleep(4)
+#		channel = await guild.create_text_channel('reminders')
+#		message = await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
+#		await asyncio.sleep(5)
+#		await bot.delete_message(message)
+#		await asyncio.sleep(4)
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
@@ -45,8 +45,8 @@ async def time_check():
 		print(today)
 		d = today.strftime("%a")
 		# print(d)
-		#channel = bot.get_channel(764596098437349401)
-		channel = bot.get_channel(discord.utils.get(server.channels, name = "reminders"))
+		channel = bot.get_channel(764596098437349401)
+		#channel = bot.get_channel(discord.utils.get(server.channels, name = "reminders"))
 		if (d == "Mon" or d == "Tue" or d == "Wed" or d == "Thu" or d == "Fri") and (today != 2020-11-3 or today != 2020-11-26 or today != 2020-11-27 or today != 2020-12-17 or today != 2020-12-18 or today != 2020-12-21 or today != 2020-12-22 or today != 2020-12-23 or today != 2020-12-24):
 			if d == "Wed" and current_time >= "07:53:30" and current_time <= "07:54:30":
 				await channel.send( "FBLA is starting in a minute.")
