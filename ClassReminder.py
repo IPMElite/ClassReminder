@@ -38,7 +38,7 @@ async def on_reaction_add(reaction, user):
 		return
 	if reaction.emoji == "🔔":
 		role = discord.utils.get(user.server.roles, name="Subscribed")
-	await bot.add_roles(user, role)
+		await bot.add_roles(user, role)
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
