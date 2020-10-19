@@ -31,7 +31,7 @@ bot = discord.Client()
 async def on_ready():
 	channel = bot.get_channel(767857071944892426)
 	message = await channel.send("React to this message to subscribe to reminders")
-	#await bot.add_reaction(message, emoji='🔔')
+	await message.add_reaction(emoji='🔔')
 async def on_reaction_add(reaction, user):
 	ChID = '767857071944892426'
 	if reaction.message.channel.id != ChID:
