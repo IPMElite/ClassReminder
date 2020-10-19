@@ -101,5 +101,4 @@ async def time_check():
 #	role = discord.utils.get(
 #	message = await channel.send("Please react to this message if you wish to subscribe to reminders for each period.")
 #bot.loop.create_task(time_check())
-time_check.start()
 bot.run(token)
