@@ -72,7 +72,7 @@ async def time_check():
 				await channel.send("Period 8 is starting in a minute.")
 			if d == "Mon" and current_time >= "15:43:30" and current_time <= "15:44:30":
 				await channel.send("Computer Science Club in starting in a minute.")
-			if d == "Mon" and current_time >= "16:30:00" and current_time <= "16:31:00":
+			if d == "Mon" and current_time >= "16:45:00" and current_time <= "16:46:00":
 				await channel.send("School is over.")
 			if d == "Thu" and current_time >= "15:28:30" and current_time <= "15:29:30":
 				await channel.send("History Bee/Bowl is starting in a minute.")
