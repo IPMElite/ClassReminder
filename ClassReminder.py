@@ -32,9 +32,13 @@ async def on_ready():
 	channel = bot.get_channel(767857071944892426)
 	message = await channel.send("Use the command '!subscribe' to subscribe to reminders")
 async def on_message(message):
+	print("Checking for !subscribe")
 	role = discord.utils.get(server.roles, id = 767857989460819980)
 	if message.content == '!schedule':
-		await bot.add_roles(role)
+		print("Giving role")
+		user = bot.get_user(user_id)
+		await bot.add_roles(user, role)
+		print("Role given")
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
