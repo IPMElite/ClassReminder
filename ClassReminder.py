@@ -28,7 +28,6 @@ bot = discord.Client()
 #		await asyncio.sleep(5)
 #		await bot.delete_message(message)
 #		await asyncio.sleep(4)
-
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
@@ -78,10 +77,9 @@ async def time_check():
 		elif d == "Sat" or d == "Sun":
 			print("Weekend")
 			await asyncio.sleep(1800)
-async def on_ready():
-	channel = bot.get_channel(767857071944892426)
-	role = discord.utils.get(
-	message = await channel.send("Please react to this message if you wish to subscribe to reminders for each period.")
-
+#async def on_ready():
+#	channel = bot.get_channel(767857071944892426)
+#	role = discord.utils.get(
+#	message = await channel.send("Please react to this message if you wish to subscribe to reminders for each period.")
 bot.loop.create_task(time_check())
 bot.run(token)
