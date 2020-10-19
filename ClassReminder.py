@@ -23,7 +23,7 @@ async def on_ready():
 		await bot.send_message(discord.utils.get(server.channels, name = "reminders"), "This is an automatic message per launch and will be deleted after a few seconds.")
 	except:
 		print("Creating new channel")
-		await bot.create_channel(server, "reminder", type discord.ChannelType.text)
+		await bot.create_channel(server, "reminder", type=discord.ChannelType.text)
 		message = await bot.send_message(discord.utils.get(server.channels, name = "reminders"), "This is an automatic message per launch and will be deleted after a few seconds.")
 		await asyncio.sleep(5)
 		await bot.delete_message(message)
