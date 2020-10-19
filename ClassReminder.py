@@ -31,7 +31,6 @@ async def on_ready():
 	channel = bot.get_channel(767857071944892426)
 	role = discord.utils.get(
 	message = await channel.send("Please react to this message if you wish to subscribe to reminders for each period.")
-@bot.event
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
