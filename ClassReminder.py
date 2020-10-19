@@ -13,6 +13,7 @@ token = os.environ.get('BOT_TOKEN')
 bot = discord.Client()
 
 @bot.event
+@bot.event
 #msg = "This is an automatic message per launch and will be deleted after a few seconds."
 #async def on_ready():
 #	try:
