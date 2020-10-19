@@ -23,7 +23,7 @@ async def on_ready():
 		await bot.send_message(discord.utils.get(guild.channels, name = "reminders"), "This is an automatic message per launch and will be deleted after a few seconds.")
 	except:
 		print("Creating new channel")
-		server = ctx.message.server
+		#server = ctx.message.server
 		#await bot.create_channel(server, "reminder", type=discord.ChannelType.text)
 		channel = await guild.create_text_channel('reminders')
 		message = await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
