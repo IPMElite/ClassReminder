@@ -39,7 +39,7 @@ async def on_message(message):
 		user = bot.get_user(user_id)
 		await bot.add_roles(user, role)
 		print("Role given")
-@tasks.loop(minutes = 1)
+@tasks.loop(seconds = 60)
 async def time_check():
 	print("Running time check")
 	await bot.wait_until_ready()
