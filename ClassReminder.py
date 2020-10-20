@@ -30,7 +30,7 @@ bot = discord.Client()
 #		await asyncio.sleep(4)
 async def on_ready():
 	channel = bot.get_channel(767857071944892426)
-	message = await channel.send("Use the command '!subscribe' to subscribe to reminders")
+	message = await channel.send("Use the command '!subscribe' to subscribe to reminders <@Subscribed>")
 #	await bot.delete_message(message)
 async def on_message(message):
 	print("Checking for !subscribe")
