@@ -31,6 +31,7 @@ bot = discord.Client()
 async def on_ready():
 	channel = bot.get_channel(767857071944892426)
 	message = await channel.send("Use the command '!subscribe' to subscribe to reminders")
+	await bot.delete_message(message)
 async def on_message(message):
 	print("Checking for !subscribe")
 	role = discord.utils.get(server.roles, id = 767857989460819980)
