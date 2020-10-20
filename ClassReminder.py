@@ -11,7 +11,8 @@ from discord.utils import get
 num = 60
 token = os.environ.get('BOT_TOKEN')
 bot = discord.Client()
-role = msg.channel.server.roles.mention('name', 'Subscribed')
+#role = msg.channel.server.roles.mention('name', 'Subscribed')
+role = discord.utils.get(ctx.guild.roles, id=767857989460819980)
 @bot.event
 @bot.event
 #msg = "This is an automatic message per launch and will be deleted after a few seconds."
