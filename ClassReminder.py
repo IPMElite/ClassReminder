@@ -97,7 +97,7 @@ async def time_check():
 				await bot.delete_message(seventh)
 				await asyncio.sleep(60)
 			if current_time >= "14:41:30" and current_time <= "14:42:30":
-				eighth await channel.send("Period 8 is starting in a minute. <@767857989460819980>")
+				eighth = await channel.send("Period 8 is starting in a minute. <@767857989460819980>")
 				await asyncio.sleep(60)
 				await bot.delete_message(eighth)
 				await asyncio.sleep(60)
