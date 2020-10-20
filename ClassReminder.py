@@ -7,6 +7,7 @@ import asyncio
 import os
 from discord.ext import tasks
 from discord.utils import get
+from discord.ext import commands
 
 num = 60
 token = os.environ.get('BOT_TOKEN')
