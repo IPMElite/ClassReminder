@@ -102,7 +102,7 @@ async def time_check():
 #				await asyncio.sleep(60)
 #				await bot.delete_message(eighth)
 #				await asyncio.sleep(60)
-				if d == "Mon" and current_time >= "15:43:30" and current_time <= "15:44:30":
+			if d == "Mon" and current_time >= "15:43:30" and current_time <= "15:44:30":
 				await channel.send("Computer Science Club in starting in a minute. <@767857989460819980>")
 #				await asyncio.sleep(60)
 #				await bot.delete_message(csc)
