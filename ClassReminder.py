@@ -11,7 +11,7 @@ from discord.utils import get
 num = 60
 token = os.environ.get('BOT_TOKEN')
 bot = discord.Client()
-
+role = msg.channel.server.roles.mention('name', 'Subscribed')
 @bot.event
 @bot.event
 #msg = "This is an automatic message per launch and will be deleted after a few seconds."
@@ -30,7 +30,7 @@ bot = discord.Client()
 #		await asyncio.sleep(4)
 async def on_ready():
 	channel = bot.get_channel(767857071944892426)
-	message = await channel.send("Use the command '!subscribe' to subscribe to reminders <@Subscribed>")
+	message = await channel.send("Use the command '!subscribe' to subscribe to reminders" + role.mention())
 #	await bot.delete_message(message)
 async def on_message(message):
 	print("Checking for !subscribe")
