@@ -33,6 +33,7 @@ role = discord.utils.get(ctx.guild.roles, id=767857989460819980)
 async def on_ready():
 	channel = bot.get_channel(767857071944892426)
 	message = await channel.send("Use the command '!subscribe' to subscribe to reminders" + role.mention())
+	await ctx.send(role.mention())
 #	await bot.delete_message(message)
 async def on_message(message):
 	print("Checking for !subscribe")
