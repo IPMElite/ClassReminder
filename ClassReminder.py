@@ -54,7 +54,7 @@ async def time_check():
 		print(today)
 		d = today.strftime("%a")
 		# print(d)
-		role = get(guild.roles, name='Subscribed')
+		role = get(server.roles, name='Subscribed')
 		await ctx.send(searched_role.mention)
 		channel = bot.get_channel(767855423775572018)
 		await channel.send(role.mention)
