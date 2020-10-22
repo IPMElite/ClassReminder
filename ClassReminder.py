@@ -45,6 +45,7 @@ async def time_check():
 	await bot.wait_until_ready()
 	print("Bot ready")
 	print(bot.is_closed)
+	guild = bot.guilds[0]
 	while not bot.is_closed():
 		print("Inside loop")
 		t = time.localtime()
@@ -54,8 +55,7 @@ async def time_check():
 		print(today)
 		d = today.strftime("%a")
 		# print(d)
-		role = get(server.roles, name='Subscribed')
-		await ctx.send(searched_role.mention)
+		role = get(guild.roles, name='Subscribed')
 		channel = bot.get_channel(767855423775572018)
 		await channel.send(role.mention)
 		#channel = bot.get_channel(discord.utils.get(server.channels, name = "reminders"))
