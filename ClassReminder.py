@@ -52,7 +52,7 @@ async def time_check():
 		current_time = time.strftime("%H:%M:%S", t)
 		print(current_time)
 		today = date.today()
-		print(today)
+		print(today, "Hello")
 		d = today.strftime("%a")
 		# print(d)
 		role = get(guild.roles, name='Subscribed')
