@@ -131,7 +131,7 @@ async def time_check():
 #				await asyncio.sleep(60)
 #				await bot.delete_message(hbb)
 #				await asyncio.sleep(60)
-			if d == "Thu" and current_time > "16:30:00" and current_time < "16:40:00":
+			if d == "Thu" and current_time > "16:30:00" and current_time < "16:31:00":
 				await channel.send("School is over.")
 #				await asyncio.sleep(60)
 #				await bot.delete_message(hbbover)
@@ -141,7 +141,7 @@ async def time_check():
 #				await asyncio.sleep(60)
 #				await bot.delete_message(regover)
 #				await asyncio.sleep(60)
-			if current_time > "20:00:00":
+			if current_time >= "20:00:00" and current_time <= "20:01:00":
 				tmp = await channel.send('Clearing messages...')
 				async for msg in channel.history(limit = 50):
 					await delete(msg, delay=None)
