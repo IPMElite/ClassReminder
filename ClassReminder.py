@@ -144,7 +144,7 @@ async def time_check():
 			if current_time > "20:00:00":
 				tmp = await channel.send('Clearing messages...')
 				async for msg in channel.history(limit = 50):
-					await bot.delete_message(msg)
+					await delete(msg, delay=None)
 			await asyncio.sleep(60)
 			
 		elif d == "Sat" or d == "Sun":
