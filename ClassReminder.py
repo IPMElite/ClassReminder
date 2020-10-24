@@ -17,15 +17,12 @@ async def on_ready():
 	guild = bot.guilds[0]
 	try:
 		channel = bot.get_channel(discord.utils.get(guild.channels, name = "reminders")
-		message = await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
-		await asyncio.sleep(10)
-		await message.delete()
 	except:
 		print("Creating new channel")
 		channel = await guild.create_text_channel('reminders')
-		message = await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
-		await asyncio.sleep(10)
-		await message.delete()
+	msg = await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
+	await asyncio.sleep(10)
+	await msg.delete()	  
 async def on_message(message):
 	print("Checking for !subscribe")
 	role = discord.utils.get(server.roles, id = 767857989460819980)
