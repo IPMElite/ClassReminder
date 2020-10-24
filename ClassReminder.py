@@ -57,12 +57,12 @@ async def time_check():
 		# print(d)
 		role = get(guild.roles, name='Subscribed')
 		channel = bot.get_channel(767855423775572018)
-		await channel.send("Clearing messages...")
-		await channel.send("This is a test and will delete in 60 seconds")
-		await asyncio.sleep(60)
-		print("Clearing messages")
-		async for msg in channel.history(limit = 50):
-			await msg.delete()
+		if current_time >= "13:31:00" and current_time <= "13:32:00":
+				await channel.send("Test")
+				await channel.send(role.mention)
+				await asyncio.sleep(60)
+				async for msg in channel.history(limit = 50):
+					await msg.delete()
 		#channel = bot.get_channel(discord.utils.get(server.channels, name = "reminders"))
 		if (d == "Mon" or d == "Tue" or d == "Wed" or d == "Thu" or d == "Fri") and (today != 2020-11-3 or today != 2020-11-26 or today != 2020-11-27 or today != 2020-12-17 or today != 2020-12-18 or today != 2020-12-21 or today != 2020-12-22 or today != 2020-12-23 or today != 2020-12-24):
 			if d == "Wed" and current_time >= "07:53:30" and current_time <= "07:54:30":
