@@ -30,7 +30,6 @@ async def time_check():
 		d = today.strftime("%a")
 		role = get(guild.roles, name='Subscribed')
 		channel = bot.get_channel(767855423775572018)
-		#channel2 = bot.get_channel(discord.utils.get(guild.channels, name = "reminders")
 		await channel.send("Test")
 		await channel.send(role.mention)
 		await asyncio.sleep(60)
