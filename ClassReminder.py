@@ -12,19 +12,7 @@ from discord.ext import commands
 token = os.environ.get('BOT_TOKEN')
 bot = discord.Client()
 @bot.event
-@bot.event
-async def on_ready():
-	guild = bot.guilds[0]
-	try:
-		channel = bot.get_channel(discord.utils.get(guild.channels, name = "reminders")
-		msg = await channel.send("Test")
-		await msg.delete()
-	except:
-		print("Creating new channel")
-		channel = await guild.create_text_channel('reminders')
-	msg = await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
-	await asyncio.sleep(10)
-	await msg.delete()	  
+@bot.event	  
 async def on_message(message):
 	print("Checking for !subscribe")
 	role = discord.utils.get(server.roles, id = 767857989460819980)
@@ -49,6 +37,13 @@ async def time_check():
 		d = today.strftime("%a")
 		role = get(guild.roles, name='Subscribed')
 		channel = bot.get_channel(767855423775572018)
+		channel2 = bot.get_channel(discord.utils.get(guild.channels, name = "reminders")
+		if current_time >= "13:50:30" and current_time <= "13:51:30":
+			await channel2.send("Test")
+			await channel2.send(role.mention)
+			await asyncio.sleep(60)
+			async for msg in channel2.history(limit = 50):
+				await msg.delete()
 		if (d == "Mon" or d == "Tue" or d == "Wed" or d == "Thu" or d == "Fri") and (today != 2020-11-3 or today != 2020-11-26 or today != 2020-11-27 or today != 2020-12-17 or today != 2020-12-18 or today != 2020-12-21 or today != 2020-12-22 or today != 2020-12-23 or today != 2020-12-24):
 			if d == "Wed" and current_time >= "07:53:30" and current_time <= "07:54:30":
 				await channel.send( "FBLA is starting in a minute. ")
