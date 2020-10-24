@@ -17,6 +17,8 @@ async def on_ready():
 	guild = bot.guilds[0]
 	try:
 		channel = bot.get_channel(discord.utils.get(guild.channels, name = "reminders")
+		msg = await channel.send("Test")
+		await msg.delete()
 	except:
 		print("Creating new channel")
 		channel = await guild.create_text_channel('reminders')
