@@ -9,30 +9,15 @@ from discord.ext import tasks
 from discord.utils import get
 from discord.ext import commands
 
-num = 60
 token = os.environ.get('BOT_TOKEN')
 bot = discord.Client()
 @bot.event
 @bot.event
-#msg = "This is an automatic message per launch and will be deleted after a few seconds."
-#async def on_ready():
-#	try:
-#		channel = bot.get_channel(discord.utils.get(guild.channels, name = "reminders")
-#		await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
-#	except:
-#		print("Creating new channel")
-		#server = ctx.message.server
-		#await bot.create_channel(server, "reminder", type=discord.ChannelType.text)
-#		channel = await guild.create_text_channel('reminders')
-#		message = await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
-#		await asyncio.sleep(5)
-#		await bot.delete_message(message)
-#		await asyncio.sleep(4)
 async def on_ready():
 	guild = bot.guilds[0]
 	try:
 		channel = bot.get_channel(discord.utils.get(guild.channels, name = "reminders")
-		await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
+		message = await channel.send("This is an automatic message per launch and will be deleted after a few seconds.")
 		await asyncio.sleep(10)
 		await message.delete()
 	except:
