@@ -27,7 +27,6 @@ async def time_check():
 		print(current_time)
 		today = date.today()
 		print(today)
-		print(current_time/60)
 		d = today.strftime("%a")
 		role = get(guild.roles, name='Subscribed')
 		channel_id = discord.utils.get(guild.channels, name="reminders")
