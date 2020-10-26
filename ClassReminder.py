@@ -92,7 +92,7 @@ async def time_check():
 				await asyncio.sleep(600)
 				async for msg in channel.history(limit = 50):
 					await msg.delete()
-			if d == "Mon" and current_time >= "16:45:00" and current_time <= "16:46:00":
+			if d == "Mon" and current_time >= "17:00:00" and current_time <= "17:01:00":
 				msg = await channel.send("School is over.")
 				await asyncio.sleep(600)
 				await msg.delete()
