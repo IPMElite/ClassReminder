@@ -115,6 +115,13 @@ async def time_check():
 		elif d == "Sat" or d == "Sun":
 			print("Weekend")
 			await asyncio.sleep(1800)
+			
+		elif (today == 2020-11-3 or today == 2020-11-26 or today == 2020-11-27 or today == 2020-12-17 or today == 2020-12-189 or today == 2020-12-21 or today == 2020-12-22 or today == 2020-12-23 or today == 2020-12-24):
+      			await channel.send("Today is off.")
+			await channel.send(role.mention)
+			await asyncio.sleep(60000)
+      			async for msg in channel.history(limit = 50):
+				await msg.delete()
 			#print("Bot is working)
 #async def on_reaction_add(reaction, user):
 #	ChID = '767857071944892426'
@@ -128,4 +135,7 @@ async def time_check():
 #	role = discord.utils.get(
 #	message = await channel.send("Please react to this message if you wish to subscribe to reminders for each period.")
 bot.loop.create_task(time_check())
+
+keep_alive.keep_alive()
+
 bot.run(token)
