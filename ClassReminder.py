@@ -115,6 +115,7 @@ async def time_check():
 		elif d == "Sat" or d == "Sun":
 			print("Weekend")
 			await asyncio.sleep(1800)
+			#print("Bot is working)
 #async def on_reaction_add(reaction, user):
 #	ChID = '767857071944892426'
 #	if reaction.message.channel.id != ChID:
