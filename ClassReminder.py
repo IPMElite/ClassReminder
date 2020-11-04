@@ -15,7 +15,6 @@ bot = discord.Client()
 @bot.event
 async def on_ready():
 	for guild in bot.guilds:
-		guild = bot.guilds[guild]
 		channel_id = discord.utils.get(guild.channels, name="reminders")
 		channel = bot.get_channel(channel_id.id)
 		await channel.send("This is an automatic message and will be deleted after a few seconds.")
@@ -28,7 +27,6 @@ async def time_check():
 	print("Bot ready")
 	print(bot.is_closed)
 	for guild in bot.guilds:
-		guild = bot.guilds[guild]
 		while not bot.is_closed():
 			print("Inside loop")
 			t = time.localtime()
