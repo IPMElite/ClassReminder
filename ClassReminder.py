@@ -22,7 +22,6 @@ async def on_ready():
 		async for msg in channel.history(limit = 50):
 			await msg.delete()
 async def time_check():
-	print("Running time check")
 	await bot.wait_until_ready()
 	print("Bot ready")
 	print(bot.is_closed)
