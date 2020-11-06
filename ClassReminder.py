@@ -38,8 +38,6 @@ async def time_check():
 		today = date.today()
 		print(today)
 		d = today.strftime("%a")
-		channel_id = discord.utils.get(guild.channels, name="reminders")
-		channel = bot.get_channel(channel_id.id)
 		if (d == "Mon" or d == "Tue" or d == "Wed" or d == "Thu" or d == "Fri") and (today != 2020-11-3 or today != 2020-11-26 or today != 2020-11-27 or today != 2020-12-17 or today != 2020-12-18 or today != 2020-12-21 or today != 2020-12-22 or today != 2020-12-23 or today != 2020-12-24):
 			if d == "Wed" and current_time >= "07:53:30" and current_time <= "07:54:30":
 				for guild in bot.guilds:
