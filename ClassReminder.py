@@ -209,22 +209,22 @@ async def time_check():
 						await msg.delete()
 			await asyncio.sleep(60)
 		
-			elif d == "Sat" or d == "Sun":
-				print("Weekend")
-				await asyncio.sleep(1800)
+		elif d == "Sat" or d == "Sun":
+			print("Weekend")
+			await asyncio.sleep(1800)
 		
-			elif (today == 2020-11-3 or today == 2020-11-26 or today == 2020-11-27 or today == 2020-12-17 or today == 2020-12-189 or today == 2020-12-21 or today == 2020-12-22 or today == 2020-12-23 or today == 2020-12-24):
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					await channel.send("Today is off.")
-					await channel.send(role.mention)
-				await asyncio.sleep(60000)
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					async for msg in channel.history(limit = 50):
-						await msg.delete()
+		elif (today == 2020-11-3 or today == 2020-11-26 or today == 2020-11-27 or today == 2020-12-17 or today == 2020-12-189 or today == 2020-12-21 or today == 2020-12-22 or today == 2020-12-23 or today == 2020-12-24):
+			for guild in bot.guilds:
+				channel_id = discord.utils.get(guild.channels, name="reminders")
+				channel = bot.get_channel(channel_id.id)
+				await channel.send("Today is off.")
+				await channel.send(role.mention)
+			await asyncio.sleep(60000)
+			for guild in bot.guilds:
+				channel_id = discord.utils.get(guild.channels, name="reminders")
+				channel = bot.get_channel(channel_id.id)
+				async for msg in channel.history(limit = 50):
+					await msg.delete()
 bot.loop.create_task(time_check())
 
 bot.run(token)
