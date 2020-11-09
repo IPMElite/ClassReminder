@@ -40,18 +40,18 @@ async def time_check():
 		d = today.strftime("%a")
 		if (d == "Mon" or d == "Tue" or d == "Wed" or d == "Thu" or d == "Fri") and (today != 2020-11-3 or today != 2020-11-26 or today != 2020-11-27 or today != 2020-12-17 or today != 2020-12-18 or today != 2020-12-21 or today != 2020-12-22 or today != 2020-12-23 or today != 2020-12-24):
 			if d == "Wed" and current_time >= "07:53:30" and current_time <= "07:54:30":
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					await channel.send("FBLA is starting in a minute. ")
-					role = get(guild.roles, name='Subscribed')
-					await channel.send(role.mention)
-				await asyncio.sleep(600)
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					async for msg in channel.history(limit = 50):
-						await msg.delete()
+#				for guild in bot.guilds:
+#					channel_id = discord.utils.get(guild.channels, name="reminders")
+#					channel = bot.get_channel(channel_id.id)
+#					await channel.send("FBLA is starting in a minute. ")
+#					role = get(guild.roles, name='Subscribed')
+#					await channel.send(role.mention)
+#				await asyncio.sleep(600)
+#				for guild in bot.guilds:
+#					channel_id = discord.utils.get(guild.channels, name="reminders")
+#					channel = bot.get_channel(channel_id.id)
+#					async for msg in channel.history(limit = 50):
+#						await msg.delete()
 			if current_time >= "08:33:30" and current_time <= "08:34:30":
 				for guild in bot.guilds:
 					channel_id = discord.utils.get(guild.channels, name="reminders")
@@ -156,55 +156,55 @@ async def time_check():
 					channel = bot.get_channel(channel_id.id)
 					async for msg in channel.history(limit = 50):
 						await msg.delete()
-			if d == "Mon" and current_time >= "15:43:30" and current_time <= "15:44:30":
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					await channel.send("Computer Science Club in starting in a minute. ")
-					role = get(guild.roles, name='Subscribed')
-					await channel.send(role.mention)
-				await asyncio.sleep(600)
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					async for msg in channel.history(limit = 50):
-						await msg.delete()
-			if d == "Mon" and current_time >= "17:00:00" and current_time <= "17:01:00":
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					await channel.send("School is over.")
-				await asyncio.sleep(600)
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					async for msg in channel.history(limit = 50):
-						await msg.delete()
-			if d == "Thu" and current_time >= "15:28:30" and current_time <= "15:29:30":
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					await channel.send("History Bee/Bowl is starting in a minute. ")
-					role = get(guild.roles, name='Subscribed')
-					await channel.send(role.mention)
-				await asyncio.sleep(600)
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					async for msg in channel.history(limit = 50):
-						await msg.delete()
-			if d == "Thu" and current_time > "16:30:00" and current_time < "16:31:00":
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					await channel.send("School is over.")
-				await asyncio.sleep(600)
-				for guild in bot.guilds:
-					channel_id = discord.utils.get(guild.channels, name="reminders")
-					channel = bot.get_channel(channel_id.id)
-					async for msg in channel.history(limit = 50):
-						await msg.delete()
-			if (d == "Tue" or d == "Wed" or d == "Fri") and current_time >= "15:20:00" and current_time <= "15:21:00":
+#			if d == "Mon" and current_time >= "15:43:30" and current_time <= "15:44:30":
+#				for guild in bot.guilds:
+#					channel_id = discord.utils.get(guild.channels, name="reminders")
+#					channel = bot.get_channel(channel_id.id)
+#					await channel.send("Computer Science Club in starting in a minute. ")
+#					role = get(guild.roles, name='Subscribed')
+#					await channel.send(role.mention)
+#				await asyncio.sleep(600)
+#				for guild in bot.guilds:
+#					channel_id = discord.utils.get(guild.channels, name="reminders")
+#					channel = bot.get_channel(channel_id.id)
+#					async for msg in channel.history(limit = 50):
+#						await msg.delete()
+#			if d == "Mon" and current_time >= "17:00:00" and current_time <= "17:01:00":
+#				for guild in bot.guilds:
+#					channel_id = discord.utils.get(guild.channels, name="reminders")
+#					channel = bot.get_channel(channel_id.id)
+#					await channel.send("School is over.")
+#				await asyncio.sleep(600)
+#				for guild in bot.guilds:
+#					channel_id = discord.utils.get(guild.channels, name="reminders")
+#					channel = bot.get_channel(channel_id.id)
+#					async for msg in channel.history(limit = 50):
+#						await msg.delete()
+#			if d == "Thu" and current_time >= "15:28:30" and current_time <= "15:29:30":
+#				for guild in bot.guilds:
+#					channel_id = discord.utils.get(guild.channels, name="reminders")
+#					channel = bot.get_channel(channel_id.id)
+#					await channel.send("History Bee/Bowl is starting in a minute. ")
+#					role = get(guild.roles, name='Subscribed')
+#					await channel.send(role.mention)
+#				await asyncio.sleep(600)
+#				for guild in bot.guilds:
+#					channel_id = discord.utils.get(guild.channels, name="reminders")
+#					channel = bot.get_channel(channel_id.id)
+#					async for msg in channel.history(limit = 50):
+#						await msg.delete()
+#			if d == "Thu" and current_time > "16:30:00" and current_time < "16:31:00":
+#				for guild in bot.guilds:
+#					channel_id = discord.utils.get(guild.channels, name="reminders")
+#					channel = bot.get_channel(channel_id.id)
+#					await channel.send("School is over.")
+#				await asyncio.sleep(600)
+#				for guild in bot.guilds:
+#					channel_id = discord.utils.get(guild.channels, name="reminders")
+#					channel = bot.get_channel(channel_id.id)
+#					async for msg in channel.history(limit = 50):
+#						await msg.delete()
+			if current_time >= "15:20:00" and current_time <= "15:21:00":# and (d == "Tue" or d == "Wed" or d == "Fri"):
 				for guild in bot.guilds:
 					channel_id = discord.utils.get(guild.channels, name="reminders")
 					channel = bot.get_channel(channel_id.id)
