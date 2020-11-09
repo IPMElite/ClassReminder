@@ -85,7 +85,7 @@ async def time_check():
 					await channel.send("Period 3 is starting in a minute. ")
 					role = get(guild.roles, name='Subscribed')
 					await channel.send(role.mention)
-					await asyncio.sleep(600)
+				await asyncio.sleep(600)
 				for guild in bot.guilds:
 					channel_id = discord.utils.get(guild.channels, name="reminders")
 					channel = bot.get_channel(channel_id.id)
@@ -98,7 +98,7 @@ async def time_check():
 					await channel.send("Period 4 is starting in a minute. ")
 					role = get(guild.roles, name='Subscribed')
 					await channel.send(role.mention)
-					await asyncio.sleep(600)
+				await asyncio.sleep(600)
 				for guild in bot.guilds:
 					channel_id = discord.utils.get(guild.channels, name="reminders")
 					channel = bot.get_channel(channel_id.id)
